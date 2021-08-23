@@ -1,69 +1,44 @@
 var displayMessage = prompt("How Many Characters? \nEnter a number between 8 and 128");
-var inputNumberOfCharacters = console.log("displayMessage");
-var numberOfCharacters = parseFloat(displayMessage);
+// var inputNumberOfCharacters = displayMessage;
+//.inputNumberOfCharacters.toString();
+// var stringMessage = String(dispayMessage);
+numberOfCharacters = parseInt(displayMessage);
 var choices = ['y', 'n', 'Y', 'N']; // Y and N are temporary toLowercase did not work
-
-
+// I checked if user entered a number and if number is 
 console.log(numberOfCharacters);
-console.log(choices[0] + " " + choices[1] + " choices");
-console.log(typeof numberOfCharacters);
-if (console.log(typeof numberOfCharacters) !== "number") {alert("enter a number")};
-// console.log(console.log(typeof numberOfCharacters));    
+var type1 = typeof numberOfCharacters
+console.log(type1);
+if (type1 !== "number") {alert("You did not enter a number. /nProgram will not run as expected");}
+if (numberOfCharacters < 8) {alert("too short \nProgram will not run as expected");}
+if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expected");}
 // var wrongEntry = alert("Enter Valid Choice. Start over");
     function enterParameters() {
     characterTypes = 0;
-    var characterType1 = prompt("Do you want to include lowercase letters? \nType y for yes, n for no");
-    characterType1.toLowerCase();
+    var characterType1 = confirm("Do you want to include lowercase letters? \nPress OK for yes, Cancel for no");
+    // characterType1.toLowerCase();
     type1 = typeof characterType1;
     console.log(characterType1 + " characterType1 " + characterTypes + " types " + type1 + "Type ");
-    if (!choices.includes(characterType1)) {
-    // wrongEntry; 
-    alert("Enter Valid Choice. Start over");
-    return;
-    if (characterType1 == "y") {
-        characterTypes = characterTypes + 1}; 
-    } // end if loop 1
+    if (characterType1 === true) {
+        characterTypes++}; 
  
-    var characterType2 = prompt("do you want to include UPPERCASE letters? \nType y for yes, n for no");
-    characterType2.toLowerCase();
-    console.log(characterType2 + " characterType2" + characterTypes + " types");
-    if (!choices.includes(characterType2)) {
-    alert("Enter Valid Choice. Start over");
-    // wrongEntry;
-    return;
-    if (characterType2 == "y") {characterTypes++};
-    } // end of loop 2
+    var characterType2 = confirm("do you want to include UPPERCASE letters? \nPress OK for yes, Cancel for no");
+    // characterType2.toLowerCase();
+    console.log(characterType2 + " characterType2 " + characterTypes + " types");
+    if (characterType2 === true) {characterTypes++};
 
-    var characterType3 = prompt("do you want to include numbes? \nType y for yes, n for no");
-    console.log(characterType3 + " characterType1" + characterTypes + " types");
-    // var validate2 = function() {
-    if (!choices.includes(characterType3)) {
-    alert("Enter Valid Choice. Start over");
-    // wrongEntry;
-    return;
-    if (characterType3 == "y") {characterTypes++};
-    } // end of loop 3
+    var characterType3 = confirm("do you want to include numbes? \nType y for yes, n for no");
+    console.log(characterType3 + " characterType3 " + characterTypes + " types");
+    if (characterType3 === true) {characterTypes++};
 
-    var characterType4 = prompt("do you want to include special characters? \nType y for yes, n for no");
-    console.log(characterType4 + " characterType1" + characterTypes + " types");
-    // var validate2 = function() {
-    if (!choices.includes(characterType4)) {
-    alert("Enter Valid Choice. Start over");
-    // wrongEntry;
-    return;
-    if (characterType4 == "y") {characterTypes++};
-    } // end of loop 4
-
-    //characterTypes = 0;
-    // if (characterType1 == 'y'){
-    // characterTypes++};
-    // else ();
-    // if (characterType2 == 'y');
-    // characterTypes++;
-    // else();
+    var characterType4 = confirm("do you want to include special characters? \nType y for yes, n for no");
+    console.log(characterType4 + " characterType4 " + characterTypes + " types");
+   if (characterType4 === true) {characterTypes++};
    
     console.log(characterTypes);
 } // end of function
 // }
     enterParameters()
 
+// function getPasswordOptions {
+//      var length = parseInt(prompt("How many character do you want include in your password?"), 10);  
+//   }
