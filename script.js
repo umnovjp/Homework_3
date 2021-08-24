@@ -26,18 +26,40 @@ if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expect
     console.log(characterType2 + " characterType2 " + characterTypes + " types");
     if (characterType2 === true) {characterTypes++};
 
-    var characterType3 = confirm("do you want to include numbes? \nType y for yes, n for no");
+    var characterType3 = confirm("do you want to include numbes? \nPress OK for yes, Cancel for no");
     console.log(characterType3 + " characterType3 " + characterTypes + " types");
     if (characterType3 === true) {characterTypes++};
 
-    var characterType4 = confirm("do you want to include special characters? \nType y for yes, n for no");
+    var characterType4 = confirm("do you want to include special characters? \nPress OK for yes, Cancel for no");
     console.log(characterType4 + " characterType4 " + characterTypes + " types");
    if (characterType4 === true) {characterTypes++};
    
     console.log(characterTypes);
 } // end of function
-// }
+
+// if (characterTypes = 0) {alert("you were supposed to select at least one value. /nProgram will not run as planned")}
     enterParameters()
+// I generate separate arrays of upper case letters, lower case letters, numbers, characters
+var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
+var number1 = "0123456789";
+var character1 = "!@#$%^&*"
+var alpha2 = Array.from(alphabetUpper);
+var alpha1 = Array.from(alphabetLower);
+var number0 = Array.from(number1);
+var character0 = Array.from(character1);
+var ratio0 = numberOfCharacters / characterTypes; 
+console.log(alpha2);
+console.log(alpha1);
+console.log(number0);
+console.log(character0);
+console.log(characterTypes);
+if (characterTypes === 0) {alert("you were supposed to select at least one value. /nProgram will not run as planned")}
+else {
+    numberUpper = Math.floor(ratio0);
+    numberNumbers = numberOfCharacters - (characterTypes - 1) * numberUpper;
+    console.log(numberOfCharacters, + " , " + characterTypes + " , " + numberUpper +  " , " + numberNumbers);
+}
 
 // function getPasswordOptions {
 //      var length = parseInt(prompt("How many character do you want include in your password?"), 10);  
