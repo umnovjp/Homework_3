@@ -1,9 +1,5 @@
 var displayMessage = prompt("How Many Characters? \nEnter a number between 8 and 128");
-// var inputNumberOfCharacters = displayMessage;
-//.inputNumberOfCharacters.toString();
-// var stringMessage = String(dispayMessage);
 numberOfCharacters = parseInt(displayMessage);
-var choices = ['y', 'n', 'Y', 'N']; // Y and N are temporary toLowercase did not work
 array0 = [];
 array1 = [];
 array2 = [];
@@ -13,7 +9,7 @@ arrayPasswordLower = [];
 arrayCharacters = [];
 arrayNumbers = [];
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
+var alphabetLower = alphabetUpper.toLowerCase(); // "abcdefghijklmnopqrstuvwxyz";
 
 var number1 = "0123456789";
 
@@ -31,19 +27,14 @@ while (number0.length < numberOfCharacters)
 var character0 = Array.from(character1);
 while (character0.length < numberOfCharacters)
     {character0 = character0.concat(character0)};
-// I checked if user entered a number and if number is 
-console.log(numberOfCharacters);
-var type1 = typeof numberOfCharacters
-if (numberOfCharacters = 'NaN') {alert("You did not enter a number. /nProgram will not run as expected");}
-console.log(type1);
-if (type1 !== "number") {alert("type1 alert");}
+// I checked if user entered a number and if number is wsithin limits
+if (isNaN(numberOfCharacters)) {alert("You did not enter a number. /nProgram will not run as expected");}
 if (numberOfCharacters < 8) {alert("too short \nProgram will not run as expected");}
 if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expected");}
-// var wrongEntry = alert("Enter Valid Choice. Start over");
+// created a function to generate random letters, characters, numbers
     function enterParameters() {
     characterTypes = 0;
     var characterType1 = confirm("Do you want to include lowercase letters? \nPress OK for yes, Cancel for no");
-    // characterType1.toLowerCase();
     type1 = typeof characterType1;
     console.log(characterType1 + " characterType1 " + characterTypes + " types " + type1 + "Type ");
     if (characterType1 === true) {
@@ -54,7 +45,6 @@ if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expect
             arrayPasswordUpper.push(alpha1[temp]);}}; 
  
     var characterType2 = confirm("do you want to include UPPERCASE letters? \nPress OK for yes, Cancel for no");
-    // characterType2.toLowerCase();
     console.log(characterType2 + " characterType2 " + characterTypes + " types");
     if (characterType2 === true) {
         characterTypes++;
@@ -83,14 +73,13 @@ if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expect
 } // end of function
 
     enterParameters()
-// I generate separate arrays of upper case letters, lower case letters, numbers, characters
 
 var ratio0 = numberOfCharacters / characterTypes; 
 if (characterTypes === 0) {alert("you were supposed to select at least one value. /nProgram will not run as planned")}
 else {
     numberUpper = Math.floor(ratio0);
     numberNumbers = numberOfCharacters - (characterTypes - 1) * numberUpper;
-    console.log(numberOfCharacters + " , " + characterTypes + " , " + numberUpper +  " , " + numberNumbers);
+    // console.log(numberOfCharacters + " , " + characterTypes + " , " + numberUpper +  " , " + numberNumbers);
 }
     arrayPasswordLower = arrayPasswordLower.slice(0,numberUpper);
     arrayPasswordUpper = arrayPasswordUpper.slice(0,numberUpper);
@@ -103,7 +92,8 @@ else {
     password = arrayPassword.join();
     for (i = 0; i < password.length; i++) password = password.replace(',', '');
 
-    console.log(number0 + ' , ' + character0);
+    // console.log(number0 + ' , ' + character0);
     // console.log(array0 + " , " + array1 + " ' " + " ' " + array2 + " ' " + array3);
-    console.log(arrayPasswordUpper + " , " + arrayPasswordLower + " , " + arrayCharacters + " , " + arrayNumbers );
-    console.log(arrayPassword + " , " + password);
+    // console.log(arrayPasswordUpper + " , " + arrayPasswordLower + " , " + arrayCharacters + " , " + arrayNumbers );
+    // console.log(arrayPassword + " , " + password);
+    alert("password = " + password)
