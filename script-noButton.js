@@ -1,5 +1,5 @@
-var generateBtn = document.querySelector("#generate");
-document.getElementById("password").textContent = "password"; 
+// var generateBtn = document.querySelector("#generate");
+// document.getElementById("password").textContent = "password"; 
 
 var displayMessage = prompt("How Many Characters? \nEnter a number between 8 and 128");
 numberOfCharacters = parseInt(displayMessage);
@@ -78,7 +78,7 @@ if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expect
 
     // generateBtn.addEventListener("click", writePassword);
     writePassword()
-   generateBtn.addEventListener("click", writePassword)
+   // generateBtn.addEventListener("click", writePassword)
 
 var ratio0 = numberOfCharacters / characterTypes; 
 if (characterTypes === 0) {alert("you were supposed to select at least one value. /nProgram will not run as planned")}
@@ -103,4 +103,4 @@ else {
     // console.log(arrayPasswordUpper + " , " + arrayPasswordLower + " , " + arrayCharacters + " , " + arrayNumbers );
     // console.log(arrayPassword + " , " + password);
     alert("password = " + password)
-    document.getElementById("password").textContent = password; 
+    // document.getElementById("password").textContent = password; 
