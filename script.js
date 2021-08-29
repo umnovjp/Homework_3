@@ -1,3 +1,6 @@
+var generateBtn = document.querySelector("#generate");
+var oneClick = document.getElementById("password").textContent = "password"; 
+
 var displayMessage = prompt("How Many Characters? \nEnter a number between 8 and 128");
 numberOfCharacters = parseInt(displayMessage);
 array0 = [];
@@ -14,7 +17,7 @@ var alphabetLower = alphabetUpper.toLowerCase(); // "abcdefghijklmnopqrstuvwxyz"
 var number1 = "0123456789";
 
 var character1 = "!@#$%^&*";
-;
+
 var alpha2 = Array.from(alphabetUpper);
 while (alpha2.length < numberOfCharacters)
     {alpha2 = alpha2.concat(alpha2)};
@@ -32,7 +35,8 @@ if (isNaN(numberOfCharacters)) {alert("You did not enter a number. /nProgram wil
 if (numberOfCharacters < 8) {alert("too short \nProgram will not run as expected");}
 if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expected");}
 // created a function to generate random letters, characters, numbers
-    function enterParameters() {
+oneClick.addEventListener("click", function writePassword(){ // new line
+   // function writePassword() {
     characterTypes = 0;
     var characterType1 = confirm("Do you want to include lowercase letters? \nPress OK for yes, Cancel for no");
     type1 = typeof characterType1;
@@ -70,9 +74,11 @@ if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expect
         arrayNumbers.push(number0[temp]);}};
    
     console.log(characterTypes);
-} // end of function
+}) // end of function
 
-    enterParameters()
+    generateBtn.addEventListener("click", writePassword);
+    writePassword()
+   // generateBtn.addEventListener("click", writePassword)
 
 var ratio0 = numberOfCharacters / characterTypes; 
 if (characterTypes === 0) {alert("you were supposed to select at least one value. /nProgram will not run as planned")}
@@ -97,3 +103,4 @@ else {
     // console.log(arrayPasswordUpper + " , " + arrayPasswordLower + " , " + arrayCharacters + " , " + arrayNumbers );
     // console.log(arrayPassword + " , " + password);
     alert("password = " + password)
+    document.getElementById("password").textContent = password; 
