@@ -35,8 +35,8 @@ if (isNaN(numberOfCharacters)) {alert("You did not enter a number. /nProgram wil
 if (numberOfCharacters < 8) {alert("too short \nProgram will not run as expected");}
 if (numberOfCharacters > 128) {alert("too long. \nProgram will not run as expected");}
 // created a function to generate random letters, characters, numbers
-oneClick.addEventListener("click", function writePassword(){ // new line
-   // function writePassword() {
+// oneClick.addEventListener("click", function writePassword(){ // new line
+    function writePassword() {
     characterTypes = 0;
     var characterType1 = confirm("Do you want to include lowercase letters? \nPress OK for yes, Cancel for no");
     type1 = typeof characterType1;
